@@ -1,0 +1,39 @@
+{ "name": "formfeed-uk/nova-theming-classes",
+    "description": "A Laravel Nova package to add theming classes to components.",
+    "homepage": "https://github.com/formfeed-uk/nova-theming-classes",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "nova",
+        "theming",
+        "css",
+        "nova 4"
+    ],
+    "require": {
+        "php": "^7.4|^8",
+        "laravel/nova": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Formfeed\\ThemingClasses\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Formfeed\\ThemingClasses\\AssetServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
