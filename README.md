@@ -1,4 +1,4 @@
-# Nova Theming Classes
+# Nova 4 Theming Classes
 
 This [Laravel Nova](https://nova.laravel.com/) package adds the theming classes functionality back to Nova 4 which was previously supplied by `Nova::enableThemingClasses()` in Nova 3
 
