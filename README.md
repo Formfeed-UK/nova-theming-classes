@@ -76,4 +76,4 @@ return [
 
 ## License
 
-Nova Resource Cards is open-sourced software licensed under the [MIT license](LICENSE.md).
+Nova Theming Classes is open-sourced software licensed under the [MIT license](LICENSE.md).
