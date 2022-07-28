@@ -26,6 +26,7 @@ Nova.bootingCallbacks.unshift(app => {
                     if (themeConfig.field === true) this.addThemingClass(this.$props?.field?.attribute, themeConfig.prefix?.field ?? `field-`);
                     if (themeConfig.resource === true) this.addThemingClass(this.$props?.resourceName, themeConfig.prefix?.resource ?? `resource-`);
                     if (themeConfig.flexGroup === true) this.addThemingClass(this.$props?.group?.name, themeConfig.prefix?.flexGroup ?? `flex-group-`);
+                    if (themeConfig.panel === true) this.addThemingClass(this.$props?.panel?.name, themeConfig.prefix?.panel ?? `panel-`)
                 }
             },
             addThemingClass(cssClass, prefix="") {
