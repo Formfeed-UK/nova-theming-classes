@@ -15,7 +15,7 @@ It should work for all Nova components and any components from third party packa
 
 Classes are applied on Component Mount and Component Update (for dependsOn compatability) via a global mixin.
 
-The component names, field names, resource names and Nova Flexible Content layout group names are added kebab cased with an optional prefix.
+The component names, field names, resource names, panel names, and Nova Flexible Content layout group names are added kebab cased with an optional prefix.
 
 If you have other packages with custom properties that do not work in the default configuration (such as the Nova Flexible Content layout group names) submit a Pull Request or an Issue. (Pull requests will be actioned faster)
 
@@ -38,6 +38,7 @@ The theming classes are by default prefixed by the following:
 - Fields: field-
 - Resources: resource-
 - Nova Flexible Content Layout Groups: flex-group-
+- Panels: panel-
 
 This can be changed in the configuration options (see below)
 
