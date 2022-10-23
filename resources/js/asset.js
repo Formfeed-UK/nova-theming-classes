@@ -14,7 +14,7 @@ Nova.bootingCallbacks.unshift(app => {
         },
         updated() {
             const dependsOn = this.$props?.field?.dependsOn ?? {};
-            if (Object.keys(dependsOn).length > 0) {
+            if (Object.keys(dependsOn).length > 0 || this.$props?.field?.component === "nova-dependable-panel") {
                 this.setThemingClasses();
             }
         },
