@@ -13,10 +13,7 @@ Nova.bootingCallbacks.unshift(app => {
             this.setThemingClasses();
         },
         updated() {
-            const dependsOn = this.$props?.field?.dependsOn ?? {};
-            if (Object.keys(dependsOn).length > 0 || this.$props?.field?.component === "nova-dependable-panel") {
-                this.setThemingClasses();
-            }
+            this.setThemingClasses();
         },
         methods: {
             setThemingClasses() {
