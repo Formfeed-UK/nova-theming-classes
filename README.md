@@ -67,7 +67,7 @@ return [
             'component' => 'alternative-component-', // Component prefix
             'field' => 'alternative-field-', // Field prefix
             'resource' => 'alternative-resource-', // Resource prefix
-            'flex_group' => 'alternative-flex-group-' // Nova Flexible Content Layout Group prefix
+            'flex_group' => 'alternative-flex-group-', // Nova Flexible Content Layout Group prefix
             'panel' => 'alternative-panel-', // Component prefix
          ]
     ]
