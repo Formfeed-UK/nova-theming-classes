@@ -10,8 +10,6 @@ class AssetServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
-     * @return void
      */
     public function boot(): void
     {
@@ -23,7 +21,7 @@ class AssetServiceProvider extends ServiceProvider
                     'component' => config('nova.theming.component', true),
                     'field' => config('nova.theming.field', true),
                     'resource' => config('nova.theming.resource', true),
-                    'flexGroup' => config("nova.theming.flex_group", true),
+                    'flexGroup' => config('nova.theming.flex_group', true),
                     'panel' => config('nova.theming.panel', true),
                     'prefix' => [
                         'component' => config('nova.theming.prefix.component', 'component-'),
@@ -31,8 +29,8 @@ class AssetServiceProvider extends ServiceProvider
                         'resource' => config('nova.theming.prefix.resource', 'resource-'),
                         'flexGroup' => config('nova.theming.prefix.flex_group', 'flex-group-'),
                         'panel' => config('nova.theming.prefix.panel', 'panel-'),
-                     ]
-                ]
+                    ],
+                ],
             ]);
         });
     }

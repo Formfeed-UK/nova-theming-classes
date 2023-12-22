@@ -39,7 +39,7 @@ Nova.bootingCallbacks.unshift(app => {
        * @property this.$props.field
        */
       setThemingClasses() {
-        const themeConfig = Nova.config('theming')
+        let themeConfig = Nova.config('theming')
         if (!this.$el || this.$el.classList === undefined || !themeConfig || !this.$props) {
           return
         }
@@ -50,11 +50,13 @@ Nova.bootingCallbacks.unshift(app => {
         if (themeConfig.field === true && this.$props.field && this.$props.field.attribute) {
           this.addThemingClass(this.$props.field.attribute, themeConfig.prefix?.field ?? 'field-')
           this.addThemingClass('field')
+          if (this.$props.field.component) {
+            this.addThemingClass(this.$props.field.component, '')
+          }
         }
         if (themeConfig.resource === true && this.$props.resourceName) {
           this.addThemingClass(this.$props.resourceName, themeConfig.prefix?.resource ?? 'resource-')
           this.addThemingClass('resource')
-          console.log('set resources')
         }
         if (themeConfig.flexGroup === true && this.$props.group && this.$props.group.name) {
           this.addThemingClass(this.$props.group.name, themeConfig.prefix?.flexGroup ?? 'flex-group-')
