@@ -11,3 +11,5 @@ mix
     '@': path.join(__dirname, 'resources/js/'),
   })
   .nova('formfeed/theming-classes')
+  .version()
+  .disableNotifications()

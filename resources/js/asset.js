@@ -20,7 +20,10 @@ import kebabCase from 'lodash/kebabCase'
 Nova.bootingCallbacks.unshift(app => {
   app.componentProxy = app.component
   app.component = function (name, component) {
-    if (component) component.name ??= name
+    if (component) {
+      component.name ??= name
+    }
+
     return app.componentProxy(name, component)
   }
 
@@ -37,25 +40,32 @@ Nova.bootingCallbacks.unshift(app => {
        */
       setThemingClasses() {
         const themeConfig = Nova.config('theming')
-        if (this.$el && this.$el.classList !== undefined && themeConfig) {
-          if (themeConfig.component === true) {
-            this.addThemingClass(this.$options?.name, themeConfig.prefix?.component ?? `component-`)
-          }
-          if (themeConfig.field === true) {
-            this.addThemingClass(this.$props?.field?.attribute, themeConfig.prefix?.field ?? `field-`)
-          }
-          if (themeConfig.resource === true) {
-            this.addThemingClass(this.$props?.resourceName, themeConfig.prefix?.resource ?? `resource-`)
-          }
-          if (themeConfig.flexGroup === true) {
-            this.addThemingClass(this.$props?.group?.name, themeConfig.prefix?.flexGroup ?? `flex-group-`)
-          }
-          if (themeConfig.panel === true) {
-            this.addThemingClass(this.$props?.panel?.name, themeConfig.prefix?.panel ?? `panel-`)
-          }
+        if (!this.$el || this.$el.classList === undefined || !themeConfig || !this.$props) {
+          return
+        }
+
+        if (themeConfig.component === true && this.$options && this.$options.name) {
+          this.addThemingClass(this.$options.name, themeConfig.prefix?.component ?? 'component-')
+        }
+        if (themeConfig.field === true && this.$props.field && this.$props.field.attribute) {
+          this.addThemingClass(this.$props.field.attribute, themeConfig.prefix?.field ?? 'field-')
+          this.addThemingClass('field')
+        }
+        if (themeConfig.resource === true && this.$props.resourceName) {
+          this.addThemingClass(this.$props.resourceName, themeConfig.prefix?.resource ?? 'resource-')
+          this.addThemingClass('resource')
+          console.log('set resources')
+        }
+        if (themeConfig.flexGroup === true && this.$props.group && this.$props.group.name) {
+          this.addThemingClass(this.$props.group.name, themeConfig.prefix?.flexGroup ?? 'flex-group-')
+          this.addThemingClass('flex-group')
+        }
+        if (themeConfig.panel === true && this.$props.panel && this.$props.panel.name) {
+          this.addThemingClass(this.$props.panel.name, themeConfig.prefix?.panel ?? 'panel-')
+          this.addThemingClass('panel')
         }
       },
-      addThemingClass(cssClass, prefix = '') {
+      addThemingClass(cssClass, prefix = 'nova-') {
         if (!isNil(cssClass) && !this.$el.classList.contains(cssClass)) {
           this.$el.classList.add(`${prefix}${kebabCase(cssClass)}`)
         }
