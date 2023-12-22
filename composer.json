@@ -10,7 +10,7 @@
         "nova 4"
     ],
     "require": {
-        "php": "^7.4|^8",
+        "php": "^8",
         "laravel/nova": "^4.0"
     },
     "autoload": {
@@ -28,12 +28,6 @@
     "config": {
         "sort-packages": true
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://nova.laravel.com"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
